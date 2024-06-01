@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RustTEST</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="site-title">RustTEST</div>
+        <div class="balance">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE-JVOpk25zzlomVHROaqWMhG84QDS5zqiRA&s" alt="Coin Icon" class="coin-icon"> 
+            <span class="balance-text">0.00 Coins</span>
+        </div>
+        <div class="profile-actions">
+            <button class="button" id="deposit">Deposit</button>
+            <button class="button" id="withdraw">Withdraw</button>
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Profilovka" class="profile-pic">
+        </div>
+    </header>
+
+    <div class="main-container"> <!-- Flex container pro chat a games -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <input type="text" placeholder="Choose a nickname..." id="nickname">
+<div class="online-status">
+    <span id="online-count">0</span> Online 
+    <div class="online-dot"></div>
+</div>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message..." id="message-input">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        
+        <main class="games-section">
+            <section class="welcome-section">
+                <h1>Welcome to RustTEST</h1>
+            </section>
+            <section class="games-section">
+                <h2>Games</h2>
+                <div class="game-buttons">
+                    <div class="game-button" id="roulette">Roulette</div>
+                    <div class="game-button" id="upgrader">Upgrader</div>
+                    <div class="game-button" id="mines">Mines</div>
+                    <div class="game-button" id="dice">Dice</div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+
+<script>
+function simulateOnlineUsers() {
+    // Generování náhodného počtu online uživatelů
+    const randomCount = Math.floor(Math.random() * 100) + 1;
+    document.getElementById('online-count').textContent = randomCount;
+}
+
+// Nastavte interval pro simulaci počtu online uživatelů každých 5 sekund
+setInterval(simulateOnlineUsers, 5000);
+
+// Inicializace simulace při načtení stránky
+window.onload = simulateOnlineUsers;
+</script>
