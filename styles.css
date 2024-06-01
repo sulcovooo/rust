@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+header {
+    background-color: #4c0000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 24px;
+    color: #fff;
+}
+
+.balance {
+    display: flex;
+    align-items: center;
+    background-color: #660000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.coin-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.balance-text {
+    font-size: 1.2em;
+}
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.button {
+    background-color: #990000;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #b30000;
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.games-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.game-button {
+    background-color: #660000;
+    padding: 20px 40px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.game-button:hover {
+    background-color: #800000;
+}
+
+
+
+.chat-container {
+    width: 300px;
+    height: 100vh;
+    background-color: #333;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.online-status {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.online-dot {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.chat-messages {
+    height: calc(100vh - 140px);
+    overflow-y: auto;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #222;
+}
+
+.chat-input {
+    display: flex;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    background-color: #4c0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #660000;
+}
+
+.chat-message {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.chat-message img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.owner-tag {
+    background-color: #990000;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.main-container {
+    display: flex; /* Umožní flexboxové rozložení */
+    min-height: 100vh; /* Minimal vertical height */
+}
+
+.chat-container {
+    width: 300px; /* Or whatever width you prefer for the chat */
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.games-section {
+    flex-grow: 1; /* Zabere zbývající prostor */
+    padding: 20px;
+    background-color: #202020; /* A different background to distinguish from chat */
+    color: white;
+}
