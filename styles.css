@@ -14,9 +14,15 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 1000; /* Zajišťuje, že header zůstane na vrcholu */
+    left: 0;
+    right: 0; /* Ujistěte se, že se šíří napříč celou stránkou */
+    z-index: 1000;
 }
+
+.profile-actions {
+    margin-right: 10px; /* Zajistěte, že na pravé straně je dostatek místa */
+}
+
 
 .chat-container {
     position: fixed;
@@ -137,7 +143,7 @@ header {
 }
 
 .chat-messages {
-    height: calc(100vh - 140px);
+    height: calc(95vh - 140px); /* Upravte hodnotu odpočtu podle výšky headeru a chat-input */
     overflow-y: auto;
     margin: 10px 0;
     padding: 10px;
