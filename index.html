@@ -1,155 +1,20 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
-    <style>
-        .stars2 {
-            color: white; /* White color for the star rating text */
-            font-size: 1.2rem; /* Adjust as needed */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-      
-        .stars::before {
-            content: "5/5 ★★★★★";
-            color: gold;
-        }
+<h1 class="title">Hover over the cards</h1>
 
-        .visit::before {
-            content: "Click to visit!";
-            color: gold;
-        }
-
-        .title {
-            text-align: center;
-        }
-
-        .sub-title {
-            font-size: 1rem;
-            text-align: center;
-        }
-
-        .icon-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .icon {
-            position: relative;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-        }
-
-        .icon img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .tooltip {
-            visibility: hidden;
-            width: 120px;
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -60px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .tooltip::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: black transparent transparent transparent;
-        }
-
-        .icon:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .ratings-container {
-            text-align: center;
-            color: white; /* White text color for the ratings section */
-            margin-top: 20px;
-        }
-
-        .ratings-container p {
-            margin: 5px 0;
-        }
-    </style>
-</head>
-<body>
-    <h1 class="title">Hey there!</h1>
-    <br>
-    <h2 class="sub-title">Here are some of the projects I've worked on, along with reviews from platforms like Fiverr and more.</h2>
-
-    <div id="app" class="container">
-        <a href="https://www.roblox.com/games/12213870612" target="_blank">
-            <card data-image="https://tr.rbxcdn.com/23253993c4abaa5ac7f013787c264798/768/432/Image/Webp">
-                <h1 slot="header">Killer's Den</h1>
-                <p slot="content">This is a personal project that my friend and I worked on together. It was in development for 1.6 years, and I handled all the scripting for the game.  <span class="visit"></span></p>
-            </card>
-        </a>
-        <a target="_blank">
-            <card data-image="https://i.ibb.co/Bg6gt49/Screenshot-9211.png">
-                <h1 slot="header">Healing Campfire</h1>
-                <p slot="content">PASQ1986'S REVIEW: "Absolutely amazing. Did it within 15 minutes. Glad with the result. Would definitely recommend!" <span class="stars"></span></p>
-            </card>
-        </a>
-        <a href="https://www.google.com" target="_blank">
-            <card data-image="https://i.ibb.co/q1PSMCg/image-2024-08-02-233809209.png">
-                <h1 slot="header">Tall Obby</h1>
-                <p slot="content">PIKAPICHOW'S REVIEW: "Great job! Didn’t interrupt other code in my game, took little time! Thank you way better than I thought it would be" <span class="stars"></span></p>
-            </card>
-        </a>
-        <a href="https://www.google.com" target="_blank">
-            <card data-image="https://i.ibb.co/9WGvs2w/image-2024-08-02-234346841.png">
-                <h1 slot="header">Stone Mining Simulator</h1>
-                <p slot="content">TYLERBAUMAN228'S REVIEW "really good would recommend delivers what you ask!" <span class="stars"></span></p>
-            </card>
-        </a>
-    </div>
-
-<!-- Ratings Section -->
-  <h3 class="sub-title">My Fiverr rating:</h3>
-    <div class="ratings-container">
-        <h2>Rating Breakdown 5.0</h2>
-        <p>Seller communication level <span class="stars2">★★★★★</span></p>
-        <p>Recommend to a friend <span class="stars2">★★★★★</span></p>
-        <p>Service as described <span class="stars2">★★★★★</span></p>
-        <p>10 ratings</p>
-
-<br>
-    <h3 class="sub-title">Check out my platforms below:</h3>
-    <br>
-    <div class="icon-container">
-        <a href="https://www.roblox.com/users/1108939696" target="_blank" class="icon">
-            <img src="https://i.ibb.co/CttGCFS/73e99bc29b53d46c53a257709a18fe63361cce23.png" alt="Icon 1">
-            <div class="tooltip">My Roblox Profile</div>
-        </a>
-        <a href="https://www.fiverr.com/wortexik" target="_blank" class="icon">
-            <img src="https://i.ibb.co/zJX8K3H/png-transparent-fiverr-hd-logo.png" alt="Icon 2">
-            <div class="tooltip">My Fiverr Profile</div>
-        </a>
-    </div>
-    </div>
-</body>
-</html>
+<div id="app" class="container">
+  <card data-image="https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=">
+    <h1 slot="header">Canyons</h1>
+    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </card>
+  <card data-image="https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+    <h1 slot="header">Beaches</h1>
+    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </card>
+  <card data-image="https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+    <h1 slot="header">Trees</h1>
+    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </card>
+  <card data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+    <h1 slot="header">Lakes</h1>
+    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </card>
+</div>
