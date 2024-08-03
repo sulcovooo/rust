@@ -1,33 +1,77 @@
-document.getElementById('steamLogin').addEventListener('click', function() {
-    window.location.href = `https://steamcommunity.com/openid/login?openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select&openid.identity=http://specs.openid.net/auth/2.0/identifier_select&openid.mode=checkid_setup&openid.ns=http://specs.openid.net/auth/2.0&openid.realm=https://sulcovooo.github.io/rust/&openid.return_to=https://sulcovooo.github.io/rust/auth/&response_type=code&client_id=C7A50EEF043FC18D873E6C8AA7FAB8DE`;
+Vue.config.devtools = true;
+
+Vue.component('card', {
+  template: `
+    <div class="card-wrap"
+      @mousemove="handleMouseMove"
+      @mouseenter="handleMouseEnter"
+      @mouseleave="handleMouseLeave"
+      ref="card">
+      <div class="card"
+        :style="cardStyle">
+        <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
+        <div class="card-info">
+          <slot name="header"></slot>
+          <slot name="content"></slot>
+        </div>
+      </div>
+    </div>`,
+  mounted() {
+    this.width = this.$refs.card.offsetWidth;
+    this.height = this.$refs.card.offsetHeight;
+  },
+  props: ['dataImage'],
+  data: () => ({
+    width: 0,
+    height: 0,
+    mouseX: 0,
+    mouseY: 0,
+    mouseLeaveDelay: null
+  }),
+  computed: {
+    mousePX() {
+      return this.mouseX / this.width;
+    },
+    mousePY() {
+      return this.mouseY / this.height;
+    },
+    cardStyle() {
+      const rX = this.mousePX * 30;
+      const rY = this.mousePY * -30;
+      return {
+        transform: `rotateY(${rX}deg) rotateX(${rY}deg)`
+      };
+    },
+    cardBgTransform() {
+      const tX = this.mousePX * -40;
+      const tY = this.mousePY * -40;
+      return {
+        transform: `translateX(${tX}px) translateY(${tY}px)`
+      }
+    },
+    cardBgImage() {
+      return {
+        backgroundImage: `url(${this.dataImage})`
+      }
+    }
+  },
+  methods: {
+    handleMouseMove(e) {
+      this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width/2;
+      this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height/2;
+    },
+    handleMouseEnter() {
+      clearTimeout(this.mouseLeaveDelay);
+    },
+    handleMouseLeave() {
+      this.mouseLeaveDelay = setTimeout(()=>{
+        this.mouseX = 0;
+        this.mouseY = 0;
+      }, 1000);
+    }
+  }
 });
 
-
-function sendMessage() {
-    var nickname = document.getElementById("nickname").value.trim() || "Anonymous";
-    var message = document.getElementById("message-input").value.trim();
-    if (message) {
-        var chatBox = document.getElementById("chat-messages");
-        var msgElement = document.createElement("div");
-        msgElement.classList.add("chat-message");
-
-        var profilePic = document.createElement("img");
-        profilePic.src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"; // Profilovka
-
-        var textNode = document.createTextNode(nickname + ": " + message);
-        msgElement.appendChild(profilePic);
-        
-        if (nickname.toLowerCase() === "sulcovo") {
-            var ownerTag = document.createElement("span");
-            ownerTag.classList.add("owner-tag");
-            ownerTag.textContent = "Owner";
-            msgElement.appendChild(ownerTag);
-        }
-
-        msgElement.appendChild(textNode);
-        chatBox.appendChild(msgElement);
-
-        document.getElementById("message-input").value = ""; // Clear input after sending
-        chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
-    }
-}
+const app = new Vue({
+  el: '#app'
+});
